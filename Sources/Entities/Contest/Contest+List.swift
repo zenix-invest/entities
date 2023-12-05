@@ -16,6 +16,7 @@ public extension Contest {
             public let startDate: Date
             public let endDate: Date
             public let minFund: Double
+            public let status: Status
             
             public init(
                 id: UUID,
@@ -30,7 +31,8 @@ public extension Contest {
                 instruments: [FinancialInstrument],
                 startDate: Date,
                 endDate: Date,
-                minFund: Double
+                minFund: Double,
+                status: Status
             ) {
                 self.id = id
                 self.name = name
@@ -45,6 +47,7 @@ public extension Contest {
                 self.startDate = startDate
                 self.endDate = endDate
                 self.minFund = minFund
+                self.status = status
             }
         }
     }
