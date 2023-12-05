@@ -22,4 +22,8 @@ public enum Contest {
     public enum Market: String, Codable {
         case nasdaq, sp500, russell2000
     }
+    
+    public enum Status: String, Codable {
+        case draft, ready, running, archived
+    }
 }
