@@ -2,7 +2,7 @@ import Foundation
 
 public extension Contest {
     enum Create {
-        public struct Request: Codable {
+        public struct Request: Codable, Equatable {
             public let name: String
             public let description: String
             public let winCondition: WinCondition
@@ -45,7 +45,7 @@ public extension Contest {
             }
         }
         
-        public struct Response: Codable {
+        public struct Response: Codable, Equatable {
             public let id: UUID
             public let name: String
             public let description: String

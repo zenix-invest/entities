@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Payload: Codable, Sendable {
+public struct Payload: Codable, Equatable, Sendable {
     public let userID: UUID
     public let fullName: String
     public let email: String

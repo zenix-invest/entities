@@ -2,7 +2,7 @@ import Foundation
 
 public extension User.Token {
     enum Refresh {
-        public struct Request: Codable {
+        public struct Request: Codable, Equatable {
             public let refreshToken: String
             
             public init(refreshToken: String) {
@@ -10,7 +10,7 @@ public extension User.Token {
             }
         }
         
-        public struct Response: Codable {
+        public struct Response: Codable, Equatable {
             public let refreshToken: String
             public let accessToken: String
             

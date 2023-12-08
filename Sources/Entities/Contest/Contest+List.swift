@@ -2,7 +2,7 @@ import Foundation
 
 public extension Contest {
     enum List {
-        public struct Response: Codable {
+        public struct Response: Codable, Equatable {
             public let id: UUID
             public let name: String
             public let description: String

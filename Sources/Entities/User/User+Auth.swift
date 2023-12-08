@@ -2,7 +2,7 @@ import Foundation
 
 public extension User.Auth {
     enum Login {
-        public struct Request: Codable {
+        public struct Request: Codable, Equatable {
             public let email: String
             public let password: String
             
@@ -15,7 +15,7 @@ public extension User.Auth {
             }
         }
         
-        public struct Response: Codable {
+        public struct Response: Codable, Equatable {
             public let token: User.Token.Refresh.Response
             public let user: User.Account.Detail.Response
             
@@ -30,7 +30,7 @@ public extension User.Auth {
     }
     
     enum Create {
-        public struct Request: Codable {
+        public struct Request: Codable, Equatable {
             public let email: String
             public let password: String
             public let fullName: String
@@ -46,7 +46,7 @@ public extension User.Auth {
             }
         }
         
-        public struct Response: Codable {
+        public struct Response: Codable, Equatable {
             public let token: User.Token.Refresh.Response
             public let user: User.Account.Detail.Response
 

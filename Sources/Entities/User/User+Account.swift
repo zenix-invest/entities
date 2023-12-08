@@ -3,7 +3,7 @@ import Foundation
 public extension User.Account {
     
     enum Detail {
-        public struct Response: Codable {
+        public struct Response: Codable, Equatable {
             public let id: UUID
             public let email: String
             public let fullName: String
@@ -33,7 +33,7 @@ public extension User.Account {
     }
     
     enum Patch {
-        public struct Request: Codable {
+        public struct Request: Codable, Equatable {
             public let email: String?
             public let fullName: String?
             public let status: Status?
@@ -49,7 +49,7 @@ public extension User.Account {
             }
         }
         
-        public struct Response: Codable {
+        public struct Response: Codable, Equatable {
             public let id: UUID
             public let email: String
             public let fullName: String
@@ -79,7 +79,7 @@ public extension User.Account {
     }
     
     enum List {
-        public struct Response: Codable {
+        public struct Response: Codable, Equatable {
             public let id: UUID
             public let fullName: String
             public let status: Status
