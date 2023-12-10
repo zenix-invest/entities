@@ -15,6 +15,7 @@ public extension Contest {
             public let duration: Duration
             public let startDate: Date
             public let minFund: Double
+            public let tradingAccountId: UUID
             
             public init(
                 name: String,
@@ -28,7 +29,8 @@ public extension Contest {
                 markets: [Market],
                 duration: Duration,
                 startDate: Date,
-                minFund: Double
+                minFund: Double,
+                tradingAccountId: UUID
             ) {
                 self.name = name
                 self.description = description
@@ -42,6 +44,7 @@ public extension Contest {
                 self.duration = duration
                 self.startDate = startDate
                 self.minFund = minFund
+                self.tradingAccountId = tradingAccountId
             }
         }
         

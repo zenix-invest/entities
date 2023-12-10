@@ -2,6 +2,14 @@ import Foundation
 
 public extension Contest {
     enum Join {
+        public struct Request: Codable, Equatable {
+            public let tradingAccountId: UUID
+            
+            public init(tradingAccountId: UUID) {
+                self.tradingAccountId = tradingAccountId
+            }
+        }
+        
         public struct Response: Codable, Equatable {
             public let id: UUID
             public let name: String
