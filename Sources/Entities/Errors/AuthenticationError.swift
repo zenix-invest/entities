@@ -1,56 +1,23 @@
 import Foundation
 
 public enum AuthenticationError: String, IdentifiableError {
-    case passwordsDontMatch
-    case emailAlreadyExists
-    case invalidEmailOrPassword
-    case refreshTokenOrUserNotFound
-    case refreshTokenHasExpired
-    case userNotFound
-    case userNotAuthorized
-    case emailTokenHasExpired
-    case emailTokenNotFound
-    case emailIsNotVerified
-    case invalidPasswordToken
-    case passwordTokenHasExpired
-    case emailVerificationFailed
-    case passwordResetFailed
-    
-    public var rawValue: String {
-        identifier
-    }
+    case passwordsDontMatch = "passwords_dont_match"
+    case emailAlreadyExists = "email_already_exists"
+    case invalidEmailOrPassword = "invalid_email_or_password"
+    case refreshTokenOrUserNotFound = "refresh_token_or_user_not_found"
+    case refreshTokenHasExpired = "refresh_token_has_expired"
+    case userNotFound = "user_not_found"
+    case userNotAuthorized = "user_not_authorized"
+    case emailTokenHasExpired = "email_token_has_expired"
+    case emailTokenNotFound = "email_token_not_found"
+    case emailIsNotVerified = "email_is_not_verified"
+    case invalidPasswordToken = "invalid_password_token"
+    case passwordTokenHasExpired = "password_token_has_expired"
+    case emailVerificationFailed = "email_verification_failed"
+    case passwordResetFailed = "password_reset_failed"
     
     public var identifier: String {
-        switch self {
-        case .passwordsDontMatch:
-            return "passwords_dont_match"
-        case .emailAlreadyExists:
-            return "email_already_exists"
-        case .invalidEmailOrPassword:
-            return "invalid_email_or_password"
-        case .refreshTokenOrUserNotFound:
-            return "refresh_token_or_user_not_found"
-        case .refreshTokenHasExpired:
-            return "refresh_token_has_expired"
-        case .userNotFound:
-            return "user_not_found"
-        case .userNotAuthorized:
-            return "user_not_authorized"
-        case .emailTokenNotFound:
-            return "email_token_not_found"
-        case .emailTokenHasExpired:
-            return "email_token_has_expired"
-        case .emailIsNotVerified:
-            return "email_is_not_verified"
-        case .invalidPasswordToken:
-            return "invalid_password_token"
-        case .passwordTokenHasExpired:
-            return "password_token_has_expired"
-        case .emailVerificationFailed:
-            return "email_verification_failed"
-        case .passwordResetFailed:
-            return "password_reset_failed"
-        }
+        rawValue
     }
     
     public var reason: String {

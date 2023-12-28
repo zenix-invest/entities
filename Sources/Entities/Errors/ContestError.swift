@@ -1,41 +1,18 @@
 import Foundation
 
 public enum ContestError: String, IdentifiableError {
-    case contestNotFound
-    case userAlreadyParticipantInContest
-    case userNotInContest
-    case creatorCannotLeaveContest
-    case enrollmentExpired
-    case maxNumberOfContestsExceeded
-    case schedulingConflict
-    case tradingAccountDoesntExist
-    case tradingAccountIncorrect
-    
-    public var rawValue: String {
-        identifier
-    }
+    case contestNotFound = "contest_not_found"
+    case userAlreadyParticipantInContest = "user_already_participant_in_contest"
+    case userNotInContest = "user_not_in_contest"
+    case creatorCannotLeaveContest = "creator_cannot_leave_contest"
+    case enrollmentExpired = "enrollment_expired"
+    case maxNumberOfContestsExceeded = "max_number_of_contests_exceeded"
+    case schedulingConflict = "scheduling_conflict"
+    case tradingAccountDoesntExist = "trading_account_doesnt_exist"
+    case tradingAccountIncorrect = "trading_account_incorrect"
     
     public var identifier: String {
-        switch self {
-        case .contestNotFound:
-            "contest_not_found"
-        case .userAlreadyParticipantInContest:
-            "user_already_participant_in_contest"
-        case .userNotInContest:
-            "user_not_in_contest"
-        case .creatorCannotLeaveContest:
-            "creator_cannot_ceave_contest"
-        case .enrollmentExpired:
-            "enrollment_expired"
-        case .maxNumberOfContestsExceeded:
-            "max_number_of_contests_exceeded"
-        case .schedulingConflict:
-            "scheduling_conflict"
-        case .tradingAccountDoesntExist:
-            "trading_account_doesnt_exist"
-        case .tradingAccountIncorrect:
-            "trading_account_incorrect"
-        }
+        rawValue
     }
     
     public var reason: String {
