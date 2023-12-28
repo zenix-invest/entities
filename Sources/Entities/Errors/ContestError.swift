@@ -1,6 +1,6 @@
 import Foundation
 
-public enum ContestError: IdentifiableError {
+public enum ContestError: String, IdentifiableError {
     case contestNotFound
     case userAlreadyParticipantInContest
     case userNotInContest
@@ -10,6 +10,10 @@ public enum ContestError: IdentifiableError {
     case schedulingConflict
     case tradingAccountDoesntExist
     case tradingAccountIncorrect
+    
+    public var rawValue: String {
+        identifier
+    }
     
     public var identifier: String {
         switch self {

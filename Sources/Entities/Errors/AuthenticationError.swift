@@ -1,6 +1,6 @@
 import Foundation
 
-public enum AuthenticationError: IdentifiableError {
+public enum AuthenticationError: String, IdentifiableError {
     case passwordsDontMatch
     case emailAlreadyExists
     case invalidEmailOrPassword
@@ -15,6 +15,10 @@ public enum AuthenticationError: IdentifiableError {
     case passwordTokenHasExpired
     case emailVerificationFailed
     case passwordResetFailed
+    
+    public var rawValue: String {
+        identifier
+    }
     
     public var identifier: String {
         switch self {
