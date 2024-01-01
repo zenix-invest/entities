@@ -62,12 +62,10 @@ public extension User.Auth {
     
     enum PasswordReset {
         public struct Request: Codable, Equatable {
-            public let password: String
-            public let token: String
+            public let email: String
             
-            public init(password: String, token: String) {
-                self.password = password
-                self.token = token
+            public init(email: String) {
+                self.email = email
             }
         }
     }
