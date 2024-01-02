@@ -14,8 +14,8 @@ public extension Contest {
             public let id: UUID
             public let name: String
             public let description: String
-            public let creator: User.Account.List.Response
-            public let participants: [User.Account.List.Response]
+            public let creator: User.List.Response
+            public let participants: [User.List.Response]
             public let winCondition: WinCondition
             public let targetProfitRatio: Double?
             public let visibility: Visibility
@@ -34,8 +34,8 @@ public extension Contest {
                 id: UUID,
                 name: String,
                 description: String,
-                creator: User.Account.List.Response,
-                participants: [User.Account.List.Response],
+                creator: User.List.Response,
+                participants: [User.List.Response],
                 winCondition: WinCondition,
                 targetProfitRatio: Double? = nil,
                 visibility: Visibility,

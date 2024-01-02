@@ -1,6 +1,8 @@
 import Foundation
 
-public extension User.Auth {
+public enum Auth {}
+
+public extension Auth {
     enum Login {
         public struct Request: Codable, Equatable {
             public let email: String
@@ -16,12 +18,12 @@ public extension User.Auth {
         }
         
         public struct Response: Codable, Equatable {
-            public let token: User.Token.Refresh.Response
-            public let user: User.Account.Detail.Response
+            public let token: TokenRefresh.Response
+            public let user: User.Detail.Response
             
             public init(
-                token: User.Token.Refresh.Response,
-                user: User.Account.Detail.Response
+                token: TokenRefresh.Response,
+                user: User.Detail.Response
             ) {
                 self.token = token
                 self.user = user
@@ -29,7 +31,7 @@ public extension User.Auth {
         }
     }
     
-    enum Create {
+    enum SignUp {
         public struct Request: Codable, Equatable {
             public let email: String
             public let password: String
@@ -47,12 +49,12 @@ public extension User.Auth {
         }
         
         public struct Response: Codable, Equatable {
-            public let token: User.Token.Refresh.Response
-            public let user: User.Account.Detail.Response
+            public let token: TokenRefresh.Response
+            public let user: User.Detail.Response
 
             public init(
-                token: User.Token.Refresh.Response,
-                user: User.Account.Detail.Response
+                token: TokenRefresh.Response,
+                user: User.Detail.Response
             ) {
                 self.token = token
                 self.user = user
@@ -66,6 +68,29 @@ public extension User.Auth {
             
             public init(email: String) {
                 self.email = email
+            }
+        }
+    }
+    
+    enum TokenRefresh {
+        public struct Request: Codable, Equatable {
+            public let refreshToken: String
+            
+            public init(refreshToken: String) {
+                self.refreshToken = refreshToken
+            }
+        }
+        
+        public struct Response: Codable, Equatable {
+            public let refreshToken: String
+            public let accessToken: String
+            
+            public init(
+                refreshToken: String,
+                accessToken: String
+            ) {
+                self.refreshToken = refreshToken
+                self.accessToken = accessToken
             }
         }
     }
