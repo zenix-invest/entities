@@ -1,6 +1,9 @@
 import Foundation
+import JWTKit
 
-public struct Payload: Codable, Equatable, Sendable {
+private let accessTokenLifetime: Double = 15 * 60
+
+public struct Payload: JWTPayload, Codable, Equatable, Sendable {
     public let userID: UUID
     public let fullName: String
     public let email: String
@@ -19,5 +22,10 @@ public struct Payload: Codable, Equatable, Sendable {
         self.email = email
         self.isAdmin = isAdmin
         self.expiresAt = expiresAt
+    }
+    
+    public func verify(using signer: JWTSigner) throws {
+        let claim = ExpirationClaim(value: expiresAt)
+        try claim.verifyNotExpired()
     }
 }
