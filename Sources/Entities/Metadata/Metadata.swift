@@ -2,9 +2,9 @@ import Foundation
 
 public enum Metadata {
     public struct Request: Codable {
-        public let attestation: Data
+        public let attestation: Attestation.Verification.Request
         
-        public init(attestation: Data) {
+        public init(attestation: Attestation.Verification.Request) {
             self.attestation = attestation
         }
     }
